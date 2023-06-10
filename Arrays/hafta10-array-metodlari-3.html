@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../custom.js"></script>
+    <script>
+        var sayilar=[17,3,25,3,9];
+        /*
+        indexOf() : belirtilen elemanın dizi içerideki ilk indis numarsını verir.
+
+        kullanımlar : 
+            indexOf(eleman);
+            indexOf(eleman,startIndex)
+        */
+       //log(sayilar,"sayilar dizisi : ");
+        var ilkIndex=sayilar.indexOf(3);
+        //log(ilkIndex,"İlk index : ");
+
+        var ikinciIndex=sayilar.indexOf(3,1);
+
+        //log("----------------------");
+        //log(ikinciIndex,"İkinci index : ");
+
+        /*
+        findIndex() : Belirtilen karşılaştırma metoduna göre bulduğu ilk nesnenin indis numarısnı verir.
+        
+        kullanımı : 
+            findInddex(callback)
+            
+        */
+
+        var kisiler=[
+            {ad:"Ahmet",soyad:"Taş",yas:20},
+            {ad:"Ayşe",soyad:"Yılmaz",yas:25},
+            {ad:"Hasan",soyad:"Kurt",yas:16},
+            {ad:"Mustafa",soyad:"Yaşar",yas:22},
+            {ad:"Fatma",soyad:"Tunç",yas:17},
+            {ad:"Hayriye",soyad:"Sefa",yas:28}
+        ];
+
+
+        var kucukInsanIndex=kisiler.findIndex((eleman)=>eleman.yas<20);
+
+        //log(kisiler,"Kişi dizisi : ");
+        //log(kucukInsanIndex,"Yaşı 20 'den ilk kişi :");
+
+
+        var olmayanSayiIndex=sayilar.indexOf(20);
+        var olmayanKisiIndex=kisiler.findIndex((eleman)=>eleman.yas==30);
+        //log(olmayanSayiIndex ,"Olmayan sayı (20)")
+        //log(olmayanKisiIndex,"olmayan kiş(yaş=30)");
+
+        /*
+        Not : Gerek indexOf() gerekese de findInedx() metotlarında eğer aranan bulunamaz ise -1 değeri döndürülür.
+        */
+
+
+        /*
+        find() : belirlenen kritere uygun ilk elemanı döndürür. Kriter bir metot ile belirlenir.   
+        
+        kullanımı  :
+            find(callback)
+
+        */
+
+        var arananKisi=kisiler.find((eleman)=>eleman.yas>20);
+        log(arananKisi,"Bulunan kisi : ");
+
+        /*
+        reverse() : Birlikte kullanıldığı diziyi ters çevirip geri döndürür. Orjinal dizide ters çevrilir.
+        Kullanımı  :
+
+            reverse()
+        */
+
+        log(sayilar,"Orjinal sayı dizisi : ");
+        var tersSayilar=sayilar.reverse();
+
+        log(tersSayilar,"Tersten yazılmış sayılar dizisi : ");
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../custom.js"></script>
+    <script>
+        /*
+        join() : Birlikte kullanılan dizinin elemanlarını birleştirerek metin olarak döndürür.
+        
+        kullanımı : 
+            join()
+            join(seperator) -> seperator : elemanların arasına yerleştirilecek metin.
+        */
+
+        var sayilar = [1, 2, 3, 4, 5];
+
+        var metin = sayilar.join();
+        var metin2 = sayilar.join("***");
+        var metin3 = sayilar.join("");
+
+        log(sayilar, "Sayı dizisi : ");
+        log(metin, "İlk metin : ");
+        log(metin2, "ikinci metin : ");
+        log(metin3, "üçüncü metin : ");
+
+        /*
+            sort() : verilen diziyi sırlamak için kullanılır. Standart sıralama kuralları kullanılabilir.Standart kuralların yanı sıra kendi sıralama yöntemimizi de kullanabilriz.
+
+            kullanımı:
+                sort()
+                sort(kıyaslamaFonksiyonu)
+
+        */
+
+
+        var rakamlar = [5, 6, 0, 2, 4, 7, 1, 9, 3, 8];
+        var isimler = ["Zehra", "Ali", "Şeyda", "Kemal", "Ahmet"];
+
+        log(rakamlar, "Rakamların sıralanmamış hali:");
+        log(rakamlar.sort(), "Rakamların sıralanmamış hali:");
+        log(isimler, "İsimlerin sıralanmamış hali:");
+        log(isimler.sort(), "İsimlerin sıralanmamış hali:");
+
+
+        /*
+        Kıyaslama fonksiyonu kullanımı : 
+        */
+
+        var kisiler = [
+            { ad: "Demet", soyad: "Şenol", yas: 35 },
+            { ad: "Ahmet", soyad: "Yılmaz", yas: 20 },
+            { ad: "Harun", soyad: "Açık", yas: 48 },
+            { ad: "Fatma", soyad: "Onur", yas: 17 },
+            { ad: "Mustafa", soyad: "Pak", yas: 27 },
+            { ad: "Samet", soyad: "Nur", yas: 42 }
+        ];
+
+        /*function Kiyaslama(item1,item2){
+
+
+        }*/
+
+        // kisiler.sort((item1, item2) => item1.yas - item2.yas);
+        // log(kisiler, "Kişiler  :");
+        // kisiler.sort((item1, item2) => item2.yas - item1.yas);
+        // log(kisiler, "Kişiler  :");
+
+
+
+        function SoyadKiyasla(item1, item2) {
+            const soyad1 = item1.soyad.toUpperCase();
+            const soyad2 = item2.soyad.toUpperCase();
+
+            if (soyad1 > soyad2) {
+                return 1;
+            }
+            if (soyad1 < soyad2) {
+                return -1;
+            }
+            return 0;
+        }
+        var kisiler = [
+            { ad: "Demet", soyad: "Senol", yas: 35 },
+            { ad: "Ahmet", soyad: "Yılmaz", yas: 20 },
+            { ad: "Harun", soyad: "Açık", yas: 48 },
+            { ad: "Fatma", soyad: "Onur", yas: 17 },
+            { ad: "Mustafa", soyad: "Pak", yas: 27 },
+            { ad: "Samet", soyad: "Nur", yas: 42 }
+        ];
+        log(kisiler,"Sırasız kişi listesi : ");
+        log(kisiler.sort(SoyadKiyasla),"Soyad sıralı kişi listesi : ")
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

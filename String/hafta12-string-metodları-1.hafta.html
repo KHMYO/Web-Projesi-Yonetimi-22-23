@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../custom.js"></script>
+    <script>
+        /*
+        trim  : bir metinin başında ve sonunda yer alan boşlukları almak için kullanılır.
+
+
+        kullanımlar : 
+
+        trim() -> metnin başındaki ve sonundaki boşlukları alır
+        trimEnd() ->metnin sonunda yer alan boşlukları alır
+        trimStart() ->metnin başında yer alan boşlukları alır
+
+        */
+
+
+        var kobay = "     Merhaba arkadaşlar.     ";
+        var str1 = kobay.trimEnd();
+        var str2 = kobay.trimStart();
+        var str3 = kobay.trim();
+
+
+        // log(kobay, "Orjinal metin : ");
+        // log(str1, "STR1: ");
+        // log(str2, "STR2: ");
+        // log(str3, "STR3: ");
+
+        /*
+        replace(); Birlikte kullanılan metinde belirtilen metin parçasına kendisine verilen metinle ilk gördüğü yerde bir defaya mahsus değiştir.
+
+        replaceAll() :Birlikte kullanılan metinde belirtilen metin parçasına kendisine verilen metinle tüm gördüğü yerlerde değiştirir.
+
+
+        kullanımı : 
+
+        replace(eskideger,yenideger) 
+            eskideger : metinde aranıp çıkarılacak parça
+            yenideger : metinde eski değerin yerine konacak parça
+
+        */
+
+        var kobay = "Tavşan , tilkiden kaçarken tilki taşa takılıp düştü."
+        var tekDegisim = kobay.replace("tilki", "tazı");
+        var cokluDegisim = kobay.replaceAll("tilki", "tazı");
+
+
+        log(kobay, "Orjinal metin :");
+        log(tekDegisim, "Tek değişim :");
+        log(cokluDegisim, "Çoklu değişim : ");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

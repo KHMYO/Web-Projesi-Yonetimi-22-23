@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- cdn: Community Develpment Network (Topluluk Geliştirme Ağı) -->
+    <script>
+        var tekJsonObjesi = {
+            title: "Yüzüklerin Efendisi I",
+            author: "J.J.R. Tolkien",
+            page: 500,
+            ISBN: "123.tr56.768"
+        };
+
+        var cokluJsonObjesi = [{
+            title: "Yüzüncü Ad",
+            author: "Amin Maoluf",
+            page: 400,
+            ISBN: "123.tr56.757"
+        }, {
+            title: "C# Öğreniyorum ",
+            author: "Anonim",
+            page: 850,
+            ISBN: "199.tr56.768"
+        }, {
+            title: "Dört Güzeller",
+            author: "İskender Pala",
+            page: 350,
+            ISBN: "123.tr56.111"
+        }];//Json nesnelerini barındıran bir dizi oluşturmuş olduk.
+
+        var yeniJson = {
+            "Ad": "Ali",
+            "Soyad": "YILMAZ",
+            "Yaş": "23"
+        };
+        $(document).ready(function () {
+            var divKitap = $("<div>");
+            var divTitle = $("<div>");
+            var divAuthor = $("<div>");
+            divTitle.text(` Kitap Adı  : ${tekJsonObjesi.title} `);
+            divAuthor.text(`Yazar : ${tekJsonObjesi.author}`);
+            divKitap.append(divTitle);
+            divKitap.append(divAuthor);
+
+            $("body").append(divKitap);
+
+
+            var kisi = $("<div>");
+
+            for (var key in yeniJson) {
+                var bilgi = $("<div>");
+                bilgi.text(`${key} : ${yeniJson[key]}`);
+                kisi.append(bilgi);
+            }
+
+            $("body").append(kisi);
+
+        });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            /*
+            ajax requestler varsayılan olarak zaman bağımsızdır. yani asenkron olarak çalışır.
+            */
+/*
+            $.ajax({
+                type: "Get",
+                url: "https://api.jsonbin.io/v3/b/6425767bace6f33a2200a4be/latest?meta=false",
+                headers: { "X-Master-Key": "$2b$10$wN/FSzGPhlJrlvh2Yb8l0.MuSEa8uYb3rVDS.0LKrLvPRNhp4cLSC" },
+                success: function (data, status, req) {
+                    console.log("Kadir HALTAŞ 'ın çiçekleri");
+                    console.log(data);
+                },
+                error: function (req, status, error) {
+                    console.log("Hata ile karşılaşıldı.");
+                    console.log("mesaj : " + error);
+                }
+            });
+
+            $.ajax({
+                type: "Get",
+                url: "https://api.jsonbin.io/v3/b/6421a16fc0e7653a05973fcc/latest?meta=false",
+                headers: { "X-Master-Key": "$2b$10$5fgHdGOAdYARnNhlNN724eANvjK0xbAno5xC8DoMouJZTDAERiL6S" },
+                success: function (data, status, req) {
+                    console.log("Büşra DEMİRTAŞ 'ın verisi");
+                    console.log(data);
+                },
+                error: function (req, status, error) {
+                    console.log("Hata ile karşılaşıldı.");
+                    console.log("mesaj : " + error);
+                }
+            });
+
+            $.ajax({
+                type: "Get",
+                url: "https://api.jsonbin.io/v3/b/64257489ace6f33a2200a322/latest?meta=false",
+                headers: { "X-Master-Key": "$2b$10$6x4kvlnBJaoITE5MhTKZk.eG93naOQcYqLUebyILwDpyP2PIPWtn." },
+                success: function (data, status, req) {
+                    console.log("Yaşar PINARBAŞI 'nın verisi");
+                    console.log(data);
+                },
+                error: function (req, status, error) {
+                    console.log("Hata ile karşılaşıldı.");
+                    console.log("mesaj : " + error);
+                }
+            });
+*/
+            AjaxIstekYap("Kadir HALTAŞ", "6425767bace6f33a2200a4be", "$2b$10$wN/FSzGPhlJrlvh2Yb8l0.MuSEa8uYb3rVDS.0LKrLvPRNhp4cLSC");
+            AjaxIstekYap("Büşra DEMİRTAŞ", "6421a16fc0e7653a05973fcc", "$2b$10$5fgHdGOAdYARnNhlNN724eANvjK0xbAno5xC8DoMouJZTDAERiL6S");
+            AjaxIstekYap("Yaşar PINARBAŞI", "64257489ace6f33a2200a322", "$2b$10$6x4kvlnBJaoITE5MhTKZk.eG93naOQcYqLUebyILwDpyP2PIPWtn.");
+
+        });
+
+        function AjaxIstekYap(istekYapanAdi, binCode, masterKey) {
+            $.ajax({
+                type: "Get",
+                url: `https://api.jsonbin.io/v3/b/${binCode}/latest?meta=false`,
+                headers: { "X-Master-Key": `${masterKey}` },
+                success: function (data, status, req) {
+                    console.log(`${istekYapanAdi} kullanıcısından gelen istek sonucu :`);
+                    console.log(data);
+                },
+                error: function (req, status, error) {
+                    console.log("Hata ile karşılaşıldı.");
+                    console.log("mesaj : " + error);
+                }
+            });
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

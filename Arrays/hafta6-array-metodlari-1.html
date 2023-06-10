@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../custom.js"></script>
+    <script>
+        var dizi1 = [3, 5, true, "Merhaba"];
+        var dizi2 = new Array();//->[]
+        var dizi3 = new Array("1", 2);//->["1",2] , istenilen kadar dizi elemanı girilebilir -> new Array(1,2,......,n) gibi
+
+        var dizi4 = [1, 2, 3, 4, 0, 0, 0, 0, 0];
+        /*
+        fill metodu muhtemel kullanımları :
+        
+        fill(value)
+        fill(value, start)
+        fill(value, start, end)
+
+        eğer start ve end kullanılacaksa dizi boyutu buna uygun olmalı.
+
+        */
+
+        log(dizi4);
+        dizi4.fill(10);
+        log("Dizi 4 içerisi 10 sayıs ile dolduruldu");
+        log(dizi4);
+        log("Dizi 4 içerisi 3 numaralı indisten itibaren 5 sayısı ile dolduruluyor");
+        dizi4.fill(5, 3)
+        log(dizi4);
+        log("dizi 4 elemannın 5,6 ve 7 indis numaralı değerleri -1 olarak değiştiriliyor.")
+        dizi4.fill(-1, 5, 8);
+        log(dizi4);
+        var bosDizi = [0, 0, 0, 0, 0];
+        bosDizi.fill(3, 0, 10);
+        log(bosDizi);
+
+
+
+
+        /*
+        Array push() metodu
+        push()
+        push(element0)
+        push(element0, element1)
+        push(element0, element1, ....., elementN)
+
+        sonuç olarak diziye eleman eklendikten sonra dizinin yeni eleman sayısını döndürür.
+
+        */
+        var isimler = ["Ali", "Ayşe", "Veli"];
+        log("mevcut isimler ");
+        log(isimler);
+        isimler.push("Demet");
+        log("isim eklendi.")
+        log(isimler);
+        var x = isimler.push("Ahmet");//x dizinin yeni eleman sayısını tutar
+        log("isim eklendi.")
+        log(isimler);
+        log(x);
+
+
+        /*
+        Array pop() metodu
+        pop()
+
+        dizinin son elemanını diziden çıkarır ve geriye bu çıkan elemanı döndürür. Eğer dizi boş ise "undefined" döndürür.
+        */
+        log("Dizinin son elemanı çıkarılıyor.")
+        var cikanEleman = isimler.pop();
+        log(isimler)
+        log(cikanEleman)
+
+        var b = [];
+        log(b.pop());//undefined döndürdü
+
+        /*
+        Array shift()
+
+        shift()
+        dizinin ilk elemanını diziden çıkarır ve geriye bu çıkan elemanı döndürür. Eğer dizi boş ise "undefined" döndürür.
+        */
+
+        log("Dizinin ilk elemanı çıkarılıyor.")
+        var cikanEleman = isimler.shift();
+        log(isimler)
+        log(cikanEleman)
+
+        var b = [];
+        log(b.shift());//undefined döndürdü
+
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

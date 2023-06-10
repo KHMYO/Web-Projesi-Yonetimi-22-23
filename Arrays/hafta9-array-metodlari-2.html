@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Metodları 2</title>
+    <script src="../custom.js"></script>
+    <script>
+        var isimler = ["Ahmet", "Mehmet", "Ali", "Ayşe", "Fatma"];
+        /*
+        Array filter() : birlikte kullanılan diziyi belirlenen filtreleme metodunu uygulayarak süzüyor ve filtrelenmiş halini döndürüyor
+        
+        filter(callback)
+
+        */
+
+        function IsimBul(isim) {
+            return isim.length > 4;
+        }
+
+        function IsimBul2(isim) {
+            if (isim.length <= 4) {
+                return isim;
+            }
+        }
+
+        var uzunIsimler = isimler.filter(IsimBul);
+        var kisaIsimler = isimler.filter(IsimBul2)
+        /*log(isimler, "isimler dizisi :");
+        log(uzunIsimler, "uzun isimler dizisi :");
+        log(kisaIsimler, "kısa isimler dizisi : ");*/
+
+        /*
+        Soru : içerisinde 1 'den 10 'a kadar (10 dahil) sayıların bulunduğu bir dizide 3'e bölünebilenler ve 7 'den büyük olanları süzen kodu yazınız.
+        */
+
+        //Çözüm:
+
+        var sayilar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function Bul(deger) {
+            if (deger % 3 == 0) {
+                return deger;
+
+            }
+            if (deger > 7) {
+                return deger;
+            }
+        }
+
+        var istenilenSayilar = sayilar.filter(Bul);
+        /*log(sayilar, "Tüm sayılar : ");
+        log(istenilenSayilar, "Uygun sayılar : ");*/
+
+        var kisiler = [
+            {
+                ad: "Ali", soyad: "Yılmaz", yas: 50
+            },
+            {
+                ad: "Ayşe", soyad: "Türk", yas: 25
+            },
+            {
+                ad: "Ahmet", soyad: "Taş", yas: 35
+            },
+            {
+                ad: "Fatma", soyad: "Gök", yas: 30
+            }
+        ];
+
+        function Bul2(nesne) {
+            if (nesne.ad.length < 5) {
+                return nesne;
+            }
+        }
+
+        var kisaIsimliKisiler = kisiler.filter(Bul2);
+        //log(kisaIsimliKisiler, "Kısa İsimli Kişiler Listesi :");
+
+
+        var yasliKisiler = kisiler.filter(k => k.yas > 30);
+        //log(yasliKisiler, "Yaşlıllar listesi : ");
+
+        var yasliVeKisaIsimliKisiler = kisiler.filter((x) => {
+            if (x.ad.length < 5 && x.yas > 30) {
+                return x;
+            }
+        });
+        //log(yasliVeKisaIsimliKisiler, "Yaşlı ve kısa isimliler listesi : ");
+
+        /*
+        Array map() : birlikte kullanıldığı dizinin elemanları üzeridne belirlenen fonsksiyonu gerçekleştirir ve oluşan yeni değerleri yeni dizide döndürür.
+
+        map(callback)
+        */
+
+        var notlar = [
+            {
+                dersAdi: "Web Projesi Yönetimi", vize: 56, final: 52, yilSonu: 0
+            },
+            {
+                dersAdi: "Sistem Analizi ve Tasarımı", vize: 35, final: 70, yilSonu: 0
+            },
+            {
+                dersAdi: "İnternet Programcılığı 2", vize: 60, final: 45, yilSonu: 0
+            }];
+
+        var notlarSonDurum = notlar.map((n) => { n.yilSonu = n.vize * 0.4 + n.final * 0.6; return n; });
+        log(notlar);
+        log(notlarSonDurum);
+
+        var degerler = [1, 2, 3];
+        var ikiKatDegerler = degerler.map(d => d * 2);
+        log(ikiKatDegerler)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

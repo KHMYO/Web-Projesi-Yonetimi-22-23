@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="OrnekSinif.js"></script>
+    <script src="../custom.js"></script>
+    <script>
+        var kobay1 = new OrnekSinif();
+        var kobay2 = new OrnekSinif("Merhaba");
+
+
+        log(kobay1.isim, "Kobay 1 isim :");
+        log(kobay2.sayi, "Kobay 2 sayi");
+        log(kobay1.yok, "Olmayan değişken");
+
+        kobay1.isim = "Veli";
+        kobay2.sayi = 10;
+
+        log(kobay1.isim, "Kobay 1 isim :");
+        log(kobay2.sayi, "Kobay 2 sayi");
+
+        log(kobay1.Deger, "Burada getter kullandım :")
+        kobay1.Deger = false;
+        log(kobay1.Deger, "set işlemi sonrası Değer:")
+
+        kobay2.Metod1();
+        kobay2.Metod2("Merhaba");
+        kobay2.Metod3();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

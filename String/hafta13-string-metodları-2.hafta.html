@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String metodları 2 </title>
+    <script src="../custom.js"> </script>
+    <script>
+
+        var metin1 = "Merhaba hocam, iyi dersler.";
+        var metin2 = "Uzun zaman oldu!";
+
+        /*
+        startsWith() : Birlikte kullanılan metnin belirtilen indisinin belirtilen metin ile başlayıp(true) başlamadığını(false) döndürür.
+
+        kullanımı : 
+            starsWith(searchString) -> searchString : Aranan metin
+            starsWith(searchString,searchStartIndex) -> searchString : Aranan metin , searchStartIndex : aramanın başlayacağı indis numarası
+          */
+        var sonuc1 = metin1.startsWith("Mer");
+        var sonuc2 = metin1.startsWith("mer");
+        var sonuc3 = metin1.startsWith("Mer", 5);
+        var sonuc4 = metin1.startsWith("ba", 5);
+
+        // log(sonuc1, "ilk kontrol");
+        // log(sonuc2, "ikinci kontrol");
+        // log(sonuc3, "üçüncü kontrol");
+        // log(sonuc4, "dördüncü kontrol");
+
+        /*
+        Örnek metin : ŞELALE ve GÖKKUŞAĞI
+        toLocaleLowerCase(): Birlikte kullanılan metni verilen alfabe kültürüne uygun şekilde küçük harfe çevirerek döndürür.
+        toLocaleUpperCase(): Birlikte kullanılan metni verilen alfabe kültürüne uygun şekilde büyük harfe çevirerek döndürür.
+
+        kullanımı : 
+            toLocalLowerCase()
+            toLocalLowerCase(localization) -> locatization  : çevrim yaparken kullanılacak alfabe kültürü
+            toLocalUpperCase()
+            toLocalUpperCase(localization) -> locatization  : çevrim yaparken kullanılacak alfabe kültürü
+
+
+        */
+
+        var ornekKucukMetin = "şelale ve gökkuşağı çevrimi";
+        var ornekBuyukMetin = "ŞELALE VE GÖKKUŞAĞI ÇEVRİMİ";
+
+        var kucukToBuyukTR = ornekKucukMetin.toLocaleUpperCase("tr-TR");
+        var kucukToBuyukEN = ornekKucukMetin.toLocaleUpperCase("en-US");
+
+        var buyukToKucukTR = ornekBuyukMetin.toLocaleLowerCase("tr-TR");
+        var buyukToKucukEN = ornekBuyukMetin.toLocaleLowerCase("en-US");
+
+
+        /*console.log(kucukToBuyukTR, "Kucuk -> Buyuk TR");
+        console.log(kucukToBuyukEN, "Kucuk -> Buyuk EN");
+        console.log(buyukToKucukTR, "Buyuk -> Kucuk TR");
+        console.log(buyukToKucukEN, "Buyuk -> Kucuk EN");*/
+
+        /*
+        split() : Birlikte kullanılan metni belirtilen ayraca göre parçalara ayırır ve metin dizisi olarak döndürür.
+
+
+        kullanım : 
+            split(seperator) : seperator -> ayraç olarak kullanılan metin,metin yerine regular expresion da yazılabilir.
+            split(seperator,count) : seperator -> ayraç olarak kullanılan metin, count -> oluşan parçalardan kaç adedinin diziye ekleneceği 
+         */
+
+        var parcalar1 = metin1.split(" ");
+        var parcalar2 = metin1.split(" ", 2);
+        var parcalar3 = metin1.split(",");
+        var parcalar4 = metin1.split("a");
+        var parcalar5 = metin1.split(/[ae]/);//regular expression kullanımına örnek.
+
+        /*log(parcalar1, "Parçalar 1 :");
+        log(parcalar2, "Parçalar 2 :");
+        log(parcalar3, "Parçalar 3 :");
+        log(parcalar4, "Parçalar 4 :");
+        log(parcalar5, "Parçalar 5 :");*/
+
+        /*
+        substring() :Birlikte kullanılan metinden belirtilen indis numaraları arasındaki  parçayı almamızı sağlar.
+
+        substring(startIndex) : startIndex -> parçanın alınmaya başlanacağı indis numarası
+        substring(startIndex,endIndex) :  startIndex -> parçanın alınmaya başlanacağı indis numarası , endIndex -> parçanın alınma işlemin son bulacağı indis numarası . endIndex de bulunan karakter parçaya dahil olmaz.
+
+        */
+
+        var parca1 = metin2.substring(2);
+        var parca2 = metin2.substring(2, 7);
+
+        log(parca1, " Parça 1 : ")
+        log(parca2, " Parça 2 : ")
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

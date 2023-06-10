@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../custom.js"></script>
+
+    <script>
+        /*
+        every() : belirlenen kritere diziedeki tüm elemanların uyup uymadığını kotrol eder. Eğer tüm elemanlar belirlenen kritere uygunsa "true" döner, aksi takdirde "false" döner.
+
+
+        kullanımı :
+
+            every(callback)
+
+
+        Not: every metodunda kullanılan foksiyona 3 ayrı paremetre gönderilebilir.Bunlar ; 
+            Birinci : üzerinden işlem yapılan eleman,
+            İkincisi : işlem yapılan elemanın indis numarası
+            üçüncüsü : every metodunun birliklte kullanılıdığı dizi  
+        */
+
+        var sayilar1 = [12, 34, 45, 67];
+        var sayilar2 = [3, 15, 45, 67];
+
+        var sonuc = sayilar1.every(e => e > 10);
+
+        if (sonuc == true) {
+            log("Tüm sayilar 10 dan büyüktür");
+        } else {
+            log("Sayılar arasında 10 dan büyük olmayan değerler var.")
+        }
+
+        var sonuc2 = sayilar2.every(e => e > 10);
+
+        if (sonuc2 == true) {
+            log("İkinci dizideki Tüm sayilar 10 dan büyüktür");
+        } else {
+            log("İkinci dizideki Sayılar arasında 10 dan büyük olmayan değerler var.")
+        }
+
+        function KontrolEt(kobay, sira, kullanilandizi) {
+            log(kobay, "kobay : ");
+            log(sira, "sira : ");
+            log(kullanilandizi, "kullanilandizi : ");
+            if (kobay % 3 == 0) {
+                return true;
+            } else { return false; }
+        }
+
+
+        /*var sonuc3 = sayilar2.every(KontrolEt);
+        if (sonuc3 == true) {
+            log("Hepsi 3 e bölünür");
+        } else {
+            log("3 e bölünemeyen en az 1 adet sayı var");
+        }*/
+
+        /*
+        forEach(): birlikte kullanılan dizinin tüm elemanları üzerinde belirtilen işlemleri gerçekleşitirir.
+        
+        
+        Kullanım  :
+
+            forEach(callback)       
+        
+        */
+
+        var isimler = ["ali", "ayşe", "fatma", "ahmet"];
+
+        isimler.forEach(e => log(e));
+
+        /*
+        for (var i = 0; i < isimler.length; i++) {
+            log(isimler[i]);
+        }
+        */
+
+        /*
+        array nesnelerinin forEach metodu kullanılarak verilen sayı dizisindeki sayıların toplamını bulunuz.
+        */
+        var toplanacakSayilar = [5, 4, 7];
+
+        var toplam = 0;
+
+        toplanacakSayilar.forEach(e => toplam += e);
+
+        log(toplam)
+
+
+        /*
+        Ödev  : array nesnesine ait forEach metodu kullanılarak sayı dizisindeki sayılardan  programda belirlenen iki sayı arasında yer alanların adedini bulan javascript kodlarını yazınız. 
+        */
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

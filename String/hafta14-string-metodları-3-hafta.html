@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String metodları hafta 3</title>
+    <script src="../custom.js"></script>
+    <script>
+            /*
+            repeat() : Birlikte kullanılan metni verilen adet kadar tekrar eder.
+            kullanımı : 
+            repeat(count) : count-> tekrar adedi
+            */
+
+            var kobay="Merhaba";
+            var yeniMetin=kobay.repeat(5);
+            //log(yeniMetin,"Tekrar sonrası oluşan yeni metin.");
+            var yeniMetin2=kobay.repeat(0);
+            //log(yeniMetin2,"Tekrar sonrası oluşan yeni metin 2.");
+            // var yeniMetin3=kobay.repeat(-10);
+            // log(yeniMetin3,"Tekrar sonrası oluşan yeni metin 3.");
+            var yeniMetin4=kobay.repeat(2.6);
+            //log(yeniMetin4,"Tekrar sonrası oluşan yeni metin 4.");
+
+
+            /*
+            concat() : verilen metinleri birleştirir.
+
+            kullanımı : 
+
+                concat(str1,str2,....., strN) : verilen N kadar metni birleştirir.
+
+            */
+
+
+            var kobay2="Deneysel metin .";
+
+            var birlesmisMetin=kobay2.concat("Bu","bir","deneysel","metindir.");
+
+            //log(birlesmisMetin,"Oluşan birleştirilmiş metin : ");
+
+
+            /*
+            slice() : birlikte kullanılan metinden bir parça almamızı sağlar.
+
+            kullanımı :
+
+                slice(start) : start -> parçanın başlangıç indis numarası
+                slice(start,end) :  start -> parçanın başlangıç indis numarası , 
+                                    end -> parçanın bitiş indis numarası. Ancak bu kısım parçaya dahil olmaz.
+            */
+
+
+            var kobay3= "Bu aslında çok uzun bir cümledir.";
+
+            var parca1=kobay3.slice(5);
+            var parca2=kobay3.slice(5,12);
+
+            log(parca1,"parça 1 :");
+            log(parca2,"parça 2 :");
+
+            var parca3=kobay3.substring(-2);            
+            log(parca3,"parça 3 :");
+            var parca4=kobay3.slice(-2);            
+            log(parca4,"parça 4 :");
+            var parca5=kobay3.slice(-7,-2);
+            //var parca5=kobay3.slice(-2,-7); -> yanlış            
+            log(parca5,"parça 5 :");
+            var parca6=kobay3.slice(3,-7);            
+            log(parca6,"parça 6 :");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

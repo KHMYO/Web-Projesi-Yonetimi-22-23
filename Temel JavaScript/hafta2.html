@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //javascript tip güvenli (type safe) bir dil değildir. 
+        var kobay1 = 3;
+        let kobay2 = 4;
+        const kobay3 = 5; // const : constant kelimesinin kısaltılmış hali -> sabit anlamına gelir.
+
+        //variable reassignment incelemesi
+        console.log("kobay 1 : " + kobay1);
+        console.log("kobay 2 : " + kobay2);
+        console.log("kobay 3 : " + kobay3);
+
+        kobay1 = "a";
+        kobay2 = true;
+        //kobay3 = 10;
+
+        console.log("Değişkenlerin değerleri değişti : ");
+        console.log("kobay 1 : " + kobay1);
+        console.log("kobay 2 : " + kobay2);
+        console.log("kobay 3 : " + kobay3);
+        //variable reassignment incelemesi sonucu :
+        /*
+        "var" -> değişkene yeni bir değer atanabilir.
+        "let" -> değişkene yeni bir değer atanabilir.
+        "const" -> değişkene yeni bir değer ATANAMAZ.
+        */
+
+        /***********************************************************************************
+         **************************************************************************************/
+
+        //variable scope(geçerlilik kapsamı) incelemesi
+
+        /*
+        2 adet scope tan bahsedebiliriz;
+        Bunlar : functional scope, block scope
+        */
+
+        function OrnekFonksiyon() {
+
+            var x = 1; //functional scope
+            let y = 2; //functional scope
+            const z = 3; //functional scope
+
+            {//block scope başlangıcı
+                log("y : " + y);
+                log("x :" + x);
+                log("z :" + z);
+                var a = 4; // functional scope
+                let b = 5;// block scope
+                const c = 6;// block scope
+            }//block scope bitişi
+            log("a : " + a);
+            //log("b : " + b); block scope a sahip olduğu için hata verir
+            //log("c :" + c); block scope a sahip olduğu için hata verir
+
+        }
+
+        OrnekFonksiyon();
+        //variable scope(geçerlilik kapsamı) incelemesi sonucu
+        /*
+        "var" -> fucntional scope sahiptir.
+        "let" ->  block scope sahiptir.
+        "const" ->  block scope sahiptir.
+        */
+
+
+        /***********************************************************************************
+         **************************************************************************************/
+
+        //variable hoist (barındırma) incelemesi
+
+        log("d1 : "+d1); //undefined çıktı yani hoist edilebilir.
+        var d1=1;
+        //log("d2 : "+d2); //error verir. dolayısıtla hoist edilemez
+        let d2=2;
+        //log("d3 : "+d3); //error verir. dolayısıtla hoist edilemez
+        const d3=3;
+
+        //variable hoist incelemesi sonucu
+        /*
+        "var" -> hoist edilebilir.
+        "let" ->   hoist EDİLEMEZ>.
+        "const" ->   hoist  EDİLEMEZ.
+        */
+
+        /***********************************************************************************
+         **************************************************************************************/
+
+        function log(value) {
+            console.log(value);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
